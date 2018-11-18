@@ -1,0 +1,19 @@
+<div class="container">
+  <div class="row">
+    <h3>Header</h3>
+    <div class="col-xs-12">
+      <app-game-control (gameEvent)="onGameEvent($event)"></app-game-control>
+    </div>
+  </div>
+  <div class="row">
+    <h3>Results</h3>
+    <div class="col-xs-12">
+      <ul>
+        <li *ngFor="let event of events">
+          <app-odd [value]="event" *ngIf="event % 2 == 1"></app-odd>
+          <app-even [value]="event" *ngIf="event % 2 == 0"></app-even>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
